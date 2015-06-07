@@ -1,0 +1,552 @@
+﻿<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<!-- EF Runtime content -->
+<edmx:Runtime>
+<!-- SSDL content -->
+<edmx:StorageModels>
+<Schema Namespace="MergedModelModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MergedModelModelStoreContainer">
+    <EntitySet Name="kom" EntityType="MergedModelModel.Store.kom" store:Type="Tables" />
+    <EntitySet Name="PRIZ" EntityType="MergedModelModel.Store.PRIZ" store:Type="Tables" />
+    <EntitySet Name="sourceDatabase" EntityType="MergedModelModel.Store.sourceDatabase" store:Type="Tables" />
+    <AssociationSet Name="FK_komsourceDatabase" Association="MergedModelModel.Store.FK_komsourceDatabase">
+      <End Role="sourceDatabase" EntitySet="sourceDatabase" />
+      <End Role="kom" EntitySet="kom" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prizkom" Association="MergedModelModel.Store.FK_prizkom">
+      <End Role="kom" EntitySet="kom" />
+      <End Role="PRIZ" EntitySet="PRIZ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prizsourceDatabase" Association="MergedModelModel.Store.FK_prizsourceDatabase">
+      <End Role="sourceDatabase" EntitySet="sourceDatabase" />
+      <End Role="PRIZ" EntitySet="PRIZ" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="kom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="id_from_base" Type="int" Nullable="false" />
+    <Property Name="source_db_id" Type="int" Nullable="false" />
+    <Property Name="N_KOM" Type="nvarchar" Nullable="false" MaxLength="7" />
+    <Property Name="V_VS" Type="nvarchar" MaxLength="12" />
+    <Property Name="N_E" Type="nvarchar" MaxLength="20" />
+    <Property Name="ST" Type="nvarchar" MaxLength="20" />
+    <Property Name="V_CH" Type="nvarchar" MaxLength="30" />
+    <Property Name="REZH_KOM" Type="nvarchar" MaxLength="20" />
+    <Property Name="D_OTPR" Type="datetime" />
+    <Property Name="V_SHET" Type="nvarchar" MaxLength="30" />
+    <Property Name="VSEGO" Type="int" />
+    <Property Name="VA" Type="int" />
+    <Property Name="MTLB" Type="int" />
+    <Property Name="SUD" Type="int" />
+    <Property Name="Z_PREDS" Type="nvarchar" MaxLength="20" />
+    <Property Name="PREDS" Type="nvarchar" MaxLength="20" />
+    <Property Name="S_UD" Type="nvarchar" MaxLength="7" />
+    <Property Name="N_UD" Type="nvarchar" MaxLength="12" />
+    <Property Name="VIDAN" Type="nvarchar" MaxLength="30" />
+    <Property Name="D_VID" Type="datetime" />
+    <Property Name="PRIM" Type="nvarchar" />
+    <Property Name="SPEC" Type="nvarchar" MaxLength="12" />
+    <Property Name="VUS1" Type="nvarchar" MaxLength="7" />
+    <Property Name="VUS2" Type="nvarchar" MaxLength="7" />
+    <Property Name="VUS3" Type="nvarchar" MaxLength="7" />
+    <Property Name="PR" Type="int" />
+    <Property Name="D_PR" Type="datetime" />
+    <Property Name="RAILROAD" Type="nvarchar" MaxLength="30" />
+    <Property Name="V_OKRUG" Type="nvarchar" MaxLength="30" />
+    <Property Name="FL_UB" Type="int" />
+    <Property Name="FL_PEREOD" Type="int" />
+    <Property Name="NARAD" Type="int" />
+    <Property Name="GOROD" Type="nvarchar" MaxLength="100" />
+    <Property Name="STREET" Type="nvarchar" MaxLength="255" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZIP" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISSIBVO" Type="int" />
+    <Property Name="DOLJNOST" Type="nvarchar" MaxLength="255" />
+    <Property Name="FOLLOW_OFICER" Type="smallint" />
+    <Property Name="FOLLOW_PRAPOR" Type="smallint" />
+    <Property Name="FOLLOW_SOLDERS" Type="smallint" />
+    <Property Name="NVESHAT" Type="nvarchar" MaxLength="12" />
+    <Property Name="DVESHAT" Type="datetime" />
+    <Property Name="KOLSUHPAY" Type="smallint" />
+    <Property Name="SYST" Type="smallint" Nullable="false" />
+    <Property Name="POEZD" Type="nvarchar" MaxLength="6" />
+    <Property Name="VID_TR" Type="nvarchar" MaxLength="12" />
+    <Property Name="t_otpr" Type="nvarchar" MaxLength="10" />
+    <Property Name="N_DOV" Type="nvarchar" MaxLength="20" />
+    <Property Name="D_DOV" Type="datetime" />
+    <Property Name="FL_DISPLAY" Type="int" Nullable="false" />
+    <Property Name="DOPUSK" Type="int" />
+  </EntityType>
+  <EntityType Name="PRIZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="id_from_base" Type="int" Nullable="false" />
+    <Property Name="source_db_id" Type="int" Nullable="false" />
+    <Property Name="FAM" Type="nvarchar" MaxLength="20" />
+    <Property Name="IM" Type="nvarchar" MaxLength="20" />
+    <Property Name="OTCH" Type="nvarchar" MaxLength="20" />
+    <Property Name="D_ROD" Type="datetime" />
+    <Property Name="RVK" Type="nvarchar" MaxLength="20" />
+    <Property Name="kom_id" Type="int" />
+    <Property Name="FL_UB" Type="int" />
+    <Property Name="SPEC" Type="nvarchar" MaxLength="7" />
+    <Property Name="BRAK" Type="nvarchar" MaxLength="12" />
+    <Property Name="SUD" Type="nvarchar" MaxLength="12" />
+    <Property Name="OBRAZOV" Type="nvarchar" MaxLength="20" />
+    <Property Name="PROF_P" Type="nvarchar" MaxLength="20" />
+    <Property Name="NPU" Type="nvarchar" MaxLength="20" />
+    <Property Name="REZH_KOM" Type="nvarchar" MaxLength="20" />
+    <Property Name="GODN" Type="nchar" MaxLength="1" />
+    <Property Name="P_PREDN" Type="int" />
+    <Property Name="TDT" Type="nvarchar" MaxLength="20" />
+    <Property Name="F_DOP" Type="int" />
+    <Property Name="N_DOP" Type="nvarchar" MaxLength="7" />
+    <Property Name="D_DOP" Type="datetime" />
+    <Property Name="D_PRIB" Type="datetime" />
+    <Property Name="FL_UV" Type="int" />
+    <Property Name="D_U_UVOL" Type="datetime" />
+    <Property Name="D_P_UVOL" Type="datetime" />
+    <Property Name="FL_SOCH" Type="int" />
+    <Property Name="D_U_SOCH" Type="datetime" />
+    <Property Name="HIST" Type="nvarchar" MaxLength="7" />
+    <Property Name="ROST" Type="int" />
+    <Property Name="MASSA" Type="int" />
+    <Property Name="STAT" Type="nvarchar" MaxLength="30" />
+    <Property Name="S_V_BIL" Type="nvarchar" MaxLength="7" />
+    <Property Name="N_V_BIL" Type="nvarchar" MaxLength="12" />
+    <Property Name="PRIM" Type="nvarchar" />
+    <Property Name="PR_UBIT" Type="nvarchar" MaxLength="20" />
+    <Property Name="PRIM_UBIT" Type="nvarchar" MaxLength="30" />
+    <Property Name="ZREN" Type="nvarchar" MaxLength="12" />
+    <Property Name="R_G_U" Type="nvarchar" MaxLength="7" />
+    <Property Name="R_O_G" Type="nvarchar" MaxLength="7" />
+    <Property Name="R_OB" Type="nvarchar" MaxLength="7" />
+    <Property Name="H" Type="nvarchar" MaxLength="12" />
+    <Property Name="POSTO" Type="int" />
+    <Property Name="LN_SER" Type="nvarchar" MaxLength="7" />
+    <Property Name="LN_NUM" Type="nvarchar" MaxLength="12" />
+    <Property Name="S_PASPORT" Type="nvarchar" MaxLength="20" />
+    <Property Name="N_PASPORT" Type="nvarchar" MaxLength="20" />
+    <Property Name="D_PASPORT" Type="datetime" />
+    <Property Name="IMEET_RAZR" Type="int" />
+    <Property Name="IMEET_REB" Type="int" />
+    <Property Name="ODIN_ROD" Type="int" />
+    <Property Name="BEZ_ROD" Type="int" />
+    <Property Name="DO_PRIZ" Type="nvarchar" MaxLength="63" />
+    <Property Name="NA_UCHETE" Type="nvarchar" MaxLength="20" />
+    <Property Name="NAVY" Type="smallint" />
+    <Property Name="S_VA" Type="nvarchar" MaxLength="4" />
+    <Property Name="N_VA" Type="nvarchar" MaxLength="6" />
+    <Property Name="M_ROD" Type="nvarchar" MaxLength="80" />
+    <Property Name="KEM_VIDAN" Type="nvarchar" MaxLength="60" />
+    <Property Name="TSP" Type="int" />
+  </EntityType>
+  <EntityType Name="sourceDatabase">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="dbName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <Association Name="FK_komsourceDatabase">
+    <End Role="sourceDatabase" Type="MergedModelModel.Store.sourceDatabase" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="kom" Type="MergedModelModel.Store.kom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sourceDatabase">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="kom">
+        <PropertyRef Name="source_db_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prizkom">
+    <End Role="kom" Type="MergedModelModel.Store.kom" Multiplicity="0..1" />
+    <End Role="PRIZ" Type="MergedModelModel.Store.PRIZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kom">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRIZ">
+        <PropertyRef Name="kom_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prizsourceDatabase">
+    <End Role="sourceDatabase" Type="MergedModelModel.Store.sourceDatabase" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PRIZ" Type="MergedModelModel.Store.PRIZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sourceDatabase">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRIZ">
+        <PropertyRef Name="source_db_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
+</edmx:StorageModels>
+<!-- CSDL content -->
+<edmx:ConceptualModels>
+<Schema Namespace="MergedModelModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MergedModelEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="kom" EntityType="MergedModelModel.kom" />
+    <EntitySet Name="PRIZ" EntityType="MergedModelModel.PRIZ" />
+    <EntitySet Name="sourceDatabase" EntityType="MergedModelModel.sourceDatabase" />
+    <AssociationSet Name="FK_komsourceDatabase" Association="MergedModelModel.FK_komsourceDatabase">
+      <End Role="sourceDatabase" EntitySet="sourceDatabase" />
+      <End Role="kom" EntitySet="kom" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prizkom" Association="MergedModelModel.FK_prizkom">
+      <End Role="kom" EntitySet="kom" />
+      <End Role="PRIZ" EntitySet="PRIZ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prizsourceDatabase" Association="MergedModelModel.FK_prizsourceDatabase">
+      <End Role="sourceDatabase" EntitySet="sourceDatabase" />
+      <End Role="PRIZ" EntitySet="PRIZ" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="kom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="id_from_base" Type="Int32" Nullable="false" />
+    <Property Name="source_db_id" Type="Int32" Nullable="false" />
+    <Property Name="N_KOM" Type="String" Nullable="false" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="V_VS" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="N_E" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ST" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="V_CH" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="REZH_KOM" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="D_OTPR" Type="DateTime" />
+    <Property Name="V_SHET" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="VSEGO" Type="Int32" />
+    <Property Name="VA" Type="Int32" />
+    <Property Name="MTLB" Type="Int32" />
+    <Property Name="SUD" Type="Int32" />
+    <Property Name="Z_PREDS" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="PREDS" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="S_UD" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="N_UD" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="VIDAN" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="D_VID" Type="DateTime" />
+    <Property Name="PRIM" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="SPEC" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="VUS1" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="VUS2" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="VUS3" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="PR" Type="Int32" />
+    <Property Name="D_PR" Type="DateTime" />
+    <Property Name="RAILROAD" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="V_OKRUG" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="FL_UB" Type="Int32" />
+    <Property Name="FL_PEREOD" Type="Int32" />
+    <Property Name="NARAD" Type="Int32" />
+    <Property Name="GOROD" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="STREET" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="PHONE" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ISSIBVO" Type="Int32" />
+    <Property Name="DOLJNOST" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FOLLOW_OFICER" Type="Int16" />
+    <Property Name="FOLLOW_PRAPOR" Type="Int16" />
+    <Property Name="FOLLOW_SOLDERS" Type="Int16" />
+    <Property Name="NVESHAT" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="DVESHAT" Type="DateTime" />
+    <Property Name="KOLSUHPAY" Type="Int16" />
+    <Property Name="SYST" Type="Int16" Nullable="false" />
+    <Property Name="POEZD" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+    <Property Name="VID_TR" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="t_otpr" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="N_DOV" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="D_DOV" Type="DateTime" />
+    <Property Name="FL_DISPLAY" Type="Int32" Nullable="false" />
+    <Property Name="DOPUSK" Type="Int32" />
+    <NavigationProperty Name="sourceDatabase" Relationship="MergedModelModel.FK_komsourceDatabase" FromRole="kom" ToRole="sourceDatabase" />
+    <NavigationProperty Name="PRIZ" Relationship="MergedModelModel.FK_prizkom" FromRole="kom" ToRole="PRIZ" />
+  </EntityType>
+  <EntityType Name="PRIZ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="id_from_base" Type="Int32" Nullable="false" />
+    <Property Name="source_db_id" Type="Int32" Nullable="false" />
+    <Property Name="FAM" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="IM" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="OTCH" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="D_ROD" Type="DateTime" />
+    <Property Name="RVK" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="kom_id" Type="Int32" />
+    <Property Name="FL_UB" Type="Int32" />
+    <Property Name="SPEC" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="BRAK" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="SUD" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="OBRAZOV" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="PROF_P" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NPU" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="REZH_KOM" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="GODN" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="P_PREDN" Type="Int32" />
+    <Property Name="TDT" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="F_DOP" Type="Int32" />
+    <Property Name="N_DOP" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="D_DOP" Type="DateTime" />
+    <Property Name="D_PRIB" Type="DateTime" />
+    <Property Name="FL_UV" Type="Int32" />
+    <Property Name="D_U_UVOL" Type="DateTime" />
+    <Property Name="D_P_UVOL" Type="DateTime" />
+    <Property Name="FL_SOCH" Type="Int32" />
+    <Property Name="D_U_SOCH" Type="DateTime" />
+    <Property Name="HIST" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="ROST" Type="Int32" />
+    <Property Name="MASSA" Type="Int32" />
+    <Property Name="STAT" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="S_V_BIL" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="N_V_BIL" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="PRIM" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="PR_UBIT" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="PRIM_UBIT" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ZREN" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="R_G_U" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="R_O_G" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="R_OB" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="H" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="POSTO" Type="Int32" />
+    <Property Name="LN_SER" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="LN_NUM" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="S_PASPORT" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="N_PASPORT" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="D_PASPORT" Type="DateTime" />
+    <Property Name="IMEET_RAZR" Type="Int32" />
+    <Property Name="IMEET_REB" Type="Int32" />
+    <Property Name="ODIN_ROD" Type="Int32" />
+    <Property Name="BEZ_ROD" Type="Int32" />
+    <Property Name="DO_PRIZ" Type="String" MaxLength="63" Unicode="true" FixedLength="false" />
+    <Property Name="NA_UCHETE" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NAVY" Type="Int16" />
+    <Property Name="S_VA" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="N_VA" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+    <Property Name="M_ROD" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="KEM_VIDAN" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="TSP" Type="Int32" />
+    <NavigationProperty Name="kom" Relationship="MergedModelModel.FK_prizkom" FromRole="PRIZ" ToRole="kom" />
+    <NavigationProperty Name="sourceDatabase" Relationship="MergedModelModel.FK_prizsourceDatabase" FromRole="PRIZ" ToRole="sourceDatabase" />
+  </EntityType>
+  <EntityType Name="sourceDatabase">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="dbName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="kom" Relationship="MergedModelModel.FK_komsourceDatabase" FromRole="sourceDatabase" ToRole="kom" />
+    <NavigationProperty Name="PRIZ" Relationship="MergedModelModel.FK_prizsourceDatabase" FromRole="sourceDatabase" ToRole="PRIZ" />
+  </EntityType>
+  <Association Name="FK_komsourceDatabase">
+    <End Role="sourceDatabase" Type="MergedModelModel.sourceDatabase" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="kom" Type="MergedModelModel.kom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sourceDatabase">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="kom">
+        <PropertyRef Name="source_db_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prizkom">
+    <End Role="kom" Type="MergedModelModel.kom" Multiplicity="0..1" />
+    <End Role="PRIZ" Type="MergedModelModel.PRIZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kom">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRIZ">
+        <PropertyRef Name="kom_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prizsourceDatabase">
+    <End Role="sourceDatabase" Type="MergedModelModel.sourceDatabase" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PRIZ" Type="MergedModelModel.PRIZ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sourceDatabase">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRIZ">
+        <PropertyRef Name="source_db_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
+</edmx:ConceptualModels>
+<!-- C-S mapping content -->
+<edmx:Mappings>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MergedModelModelStoreContainer" CdmEntityContainer="MergedModelEntities">
+    <EntitySetMapping Name="kom">
+      <EntityTypeMapping TypeName="MergedModelModel.kom">
+        <MappingFragment StoreEntitySet="kom">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="id_from_base" ColumnName="id_from_base" />
+          <ScalarProperty Name="source_db_id" ColumnName="source_db_id" />
+          <ScalarProperty Name="N_KOM" ColumnName="N_KOM" />
+          <ScalarProperty Name="V_VS" ColumnName="V_VS" />
+          <ScalarProperty Name="N_E" ColumnName="N_E" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="V_CH" ColumnName="V_CH" />
+          <ScalarProperty Name="REZH_KOM" ColumnName="REZH_KOM" />
+          <ScalarProperty Name="D_OTPR" ColumnName="D_OTPR" />
+          <ScalarProperty Name="V_SHET" ColumnName="V_SHET" />
+          <ScalarProperty Name="VSEGO" ColumnName="VSEGO" />
+          <ScalarProperty Name="VA" ColumnName="VA" />
+          <ScalarProperty Name="MTLB" ColumnName="MTLB" />
+          <ScalarProperty Name="SUD" ColumnName="SUD" />
+          <ScalarProperty Name="Z_PREDS" ColumnName="Z_PREDS" />
+          <ScalarProperty Name="PREDS" ColumnName="PREDS" />
+          <ScalarProperty Name="S_UD" ColumnName="S_UD" />
+          <ScalarProperty Name="N_UD" ColumnName="N_UD" />
+          <ScalarProperty Name="VIDAN" ColumnName="VIDAN" />
+          <ScalarProperty Name="D_VID" ColumnName="D_VID" />
+          <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+          <ScalarProperty Name="SPEC" ColumnName="SPEC" />
+          <ScalarProperty Name="VUS1" ColumnName="VUS1" />
+          <ScalarProperty Name="VUS2" ColumnName="VUS2" />
+          <ScalarProperty Name="VUS3" ColumnName="VUS3" />
+          <ScalarProperty Name="PR" ColumnName="PR" />
+          <ScalarProperty Name="D_PR" ColumnName="D_PR" />
+          <ScalarProperty Name="RAILROAD" ColumnName="RAILROAD" />
+          <ScalarProperty Name="V_OKRUG" ColumnName="V_OKRUG" />
+          <ScalarProperty Name="FL_UB" ColumnName="FL_UB" />
+          <ScalarProperty Name="FL_PEREOD" ColumnName="FL_PEREOD" />
+          <ScalarProperty Name="NARAD" ColumnName="NARAD" />
+          <ScalarProperty Name="GOROD" ColumnName="GOROD" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="ISSIBVO" ColumnName="ISSIBVO" />
+          <ScalarProperty Name="DOLJNOST" ColumnName="DOLJNOST" />
+          <ScalarProperty Name="FOLLOW_OFICER" ColumnName="FOLLOW_OFICER" />
+          <ScalarProperty Name="FOLLOW_PRAPOR" ColumnName="FOLLOW_PRAPOR" />
+          <ScalarProperty Name="FOLLOW_SOLDERS" ColumnName="FOLLOW_SOLDERS" />
+          <ScalarProperty Name="NVESHAT" ColumnName="NVESHAT" />
+          <ScalarProperty Name="DVESHAT" ColumnName="DVESHAT" />
+          <ScalarProperty Name="KOLSUHPAY" ColumnName="KOLSUHPAY" />
+          <ScalarProperty Name="SYST" ColumnName="SYST" />
+          <ScalarProperty Name="POEZD" ColumnName="POEZD" />
+          <ScalarProperty Name="VID_TR" ColumnName="VID_TR" />
+          <ScalarProperty Name="t_otpr" ColumnName="t_otpr" />
+          <ScalarProperty Name="N_DOV" ColumnName="N_DOV" />
+          <ScalarProperty Name="D_DOV" ColumnName="D_DOV" />
+          <ScalarProperty Name="FL_DISPLAY" ColumnName="FL_DISPLAY" />
+          <ScalarProperty Name="DOPUSK" ColumnName="DOPUSK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRIZ">
+      <EntityTypeMapping TypeName="MergedModelModel.PRIZ">
+        <MappingFragment StoreEntitySet="PRIZ">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="id_from_base" ColumnName="id_from_base" />
+          <ScalarProperty Name="source_db_id" ColumnName="source_db_id" />
+          <ScalarProperty Name="FAM" ColumnName="FAM" />
+          <ScalarProperty Name="IM" ColumnName="IM" />
+          <ScalarProperty Name="OTCH" ColumnName="OTCH" />
+          <ScalarProperty Name="D_ROD" ColumnName="D_ROD" />
+          <ScalarProperty Name="RVK" ColumnName="RVK" />
+          <ScalarProperty Name="kom_id" ColumnName="kom_id" />
+          <ScalarProperty Name="FL_UB" ColumnName="FL_UB" />
+          <ScalarProperty Name="SPEC" ColumnName="SPEC" />
+          <ScalarProperty Name="BRAK" ColumnName="BRAK" />
+          <ScalarProperty Name="SUD" ColumnName="SUD" />
+          <ScalarProperty Name="OBRAZOV" ColumnName="OBRAZOV" />
+          <ScalarProperty Name="PROF_P" ColumnName="PROF_P" />
+          <ScalarProperty Name="NPU" ColumnName="NPU" />
+          <ScalarProperty Name="REZH_KOM" ColumnName="REZH_KOM" />
+          <ScalarProperty Name="GODN" ColumnName="GODN" />
+          <ScalarProperty Name="P_PREDN" ColumnName="P_PREDN" />
+          <ScalarProperty Name="TDT" ColumnName="TDT" />
+          <ScalarProperty Name="F_DOP" ColumnName="F_DOP" />
+          <ScalarProperty Name="N_DOP" ColumnName="N_DOP" />
+          <ScalarProperty Name="D_DOP" ColumnName="D_DOP" />
+          <ScalarProperty Name="D_PRIB" ColumnName="D_PRIB" />
+          <ScalarProperty Name="FL_UV" ColumnName="FL_UV" />
+          <ScalarProperty Name="D_U_UVOL" ColumnName="D_U_UVOL" />
+          <ScalarProperty Name="D_P_UVOL" ColumnName="D_P_UVOL" />
+          <ScalarProperty Name="FL_SOCH" ColumnName="FL_SOCH" />
+          <ScalarProperty Name="D_U_SOCH" ColumnName="D_U_SOCH" />
+          <ScalarProperty Name="HIST" ColumnName="HIST" />
+          <ScalarProperty Name="ROST" ColumnName="ROST" />
+          <ScalarProperty Name="MASSA" ColumnName="MASSA" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="S_V_BIL" ColumnName="S_V_BIL" />
+          <ScalarProperty Name="N_V_BIL" ColumnName="N_V_BIL" />
+          <ScalarProperty Name="PRIM" ColumnName="PRIM" />
+          <ScalarProperty Name="PR_UBIT" ColumnName="PR_UBIT" />
+          <ScalarProperty Name="PRIM_UBIT" ColumnName="PRIM_UBIT" />
+          <ScalarProperty Name="ZREN" ColumnName="ZREN" />
+          <ScalarProperty Name="R_G_U" ColumnName="R_G_U" />
+          <ScalarProperty Name="R_O_G" ColumnName="R_O_G" />
+          <ScalarProperty Name="R_OB" ColumnName="R_OB" />
+          <ScalarProperty Name="H" ColumnName="H" />
+          <ScalarProperty Name="POSTO" ColumnName="POSTO" />
+          <ScalarProperty Name="LN_SER" ColumnName="LN_SER" />
+          <ScalarProperty Name="LN_NUM" ColumnName="LN_NUM" />
+          <ScalarProperty Name="S_PASPORT" ColumnName="S_PASPORT" />
+          <ScalarProperty Name="N_PASPORT" ColumnName="N_PASPORT" />
+          <ScalarProperty Name="D_PASPORT" ColumnName="D_PASPORT" />
+          <ScalarProperty Name="IMEET_RAZR" ColumnName="IMEET_RAZR" />
+          <ScalarProperty Name="IMEET_REB" ColumnName="IMEET_REB" />
+          <ScalarProperty Name="ODIN_ROD" ColumnName="ODIN_ROD" />
+          <ScalarProperty Name="BEZ_ROD" ColumnName="BEZ_ROD" />
+          <ScalarProperty Name="DO_PRIZ" ColumnName="DO_PRIZ" />
+          <ScalarProperty Name="NA_UCHETE" ColumnName="NA_UCHETE" />
+          <ScalarProperty Name="NAVY" ColumnName="NAVY" />
+          <ScalarProperty Name="S_VA" ColumnName="S_VA" />
+          <ScalarProperty Name="N_VA" ColumnName="N_VA" />
+          <ScalarProperty Name="M_ROD" ColumnName="M_ROD" />
+          <ScalarProperty Name="KEM_VIDAN" ColumnName="KEM_VIDAN" />
+          <ScalarProperty Name="TSP" ColumnName="TSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sourceDatabase">
+      <EntityTypeMapping TypeName="MergedModelModel.sourceDatabase">
+        <MappingFragment StoreEntitySet="sourceDatabase">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="dbName" ColumnName="dbName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
+</edmx:Mappings>
+</edmx:Runtime>
+<!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+<edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+<Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
+<edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
+<edmx:Diagrams >
+      <Diagram DiagramId="6b36ab95faae4ce5bff58adef61e315c" Name="Diagram1">
+        <EntityTypeShape EntityType="MergedModelModel.kom" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MergedModelModel.PRIZ" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MergedModelModel.sourceDatabase" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="MergedModelModel.FK_komsourceDatabase" ManuallyRouted="false" />
+        <AssociationConnector Association="MergedModelModel.FK_prizkom" ManuallyRouted="false" />
+        <AssociationConnector Association="MergedModelModel.FK_prizsourceDatabase" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+</edmx:Designer></edmx:Edmx>

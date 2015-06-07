@@ -1,0 +1,31 @@
+﻿TextTemplatingFileGenerator
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)FormOverlapDetection\bin\Debug\FormOverlapDetection.exe" #>
+<#@ assembly name="$(SolutionDir)FormOverlapDetection\bin\Debug\EntityFramework.dll" #>
+<#@ import namespace="FormOverlapDetection.CurrentModel" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+
+namespace FormOverlapDetection.Templates
+{
+    public class PrizConverterTemplate
+    {
+        public CurrentModel.PRIZ Convert(MergedModel.PRIZ mp)
+        {
+            CurrentModel.PRIZ cp = new CurrentModel.PRIZ();
+<#
+	var properties = typeof(PRIZ).GetProperties();
+
+	foreach(var p in properties)
+    {
+#>
+            cp.<#= p.Name #> = mp.<#= p.Name #>;
+<# } #>
+            return cp;
+        }
+    }
+}

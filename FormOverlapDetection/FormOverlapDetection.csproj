@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC24F9AD-53D1-46AD-ABCA-8016D3553925}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FormOverlapDetection</RootNamespace>
+    <AssemblyName>FormOverlapDetection</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CurrentModel\CurrentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\CurrentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\CurrentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrentModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\DO_PRIZ.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\DUP.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\GORODA.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\KN_P.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\kom.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\LOG_P.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\NA_UCHETE.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\NET_N_VB.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\NVOZVR.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\OBRAZ.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\OPERAT_SPR.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\PRIZ.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\RAILROAD.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\rezhim.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\REZH_KOM.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\RVK.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\SEM_POL.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\SPEC.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\SUD.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\VID_VS.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\VID_VS_FOR_PRIC.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\V_OKRUG.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentModel\ZVAN.cs">
+      <DependentUpon>CurrentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MergedModel\kom.cs">
+      <DependentUpon>MergedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MergedModel\MergedModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MergedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MergedModel\PRIZ.cs">
+      <DependentUpon>MergedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MergedModel\sourceDatabase.cs">
+      <DependentUpon>MergedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\PrizConverter.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MergedModel\MergedModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MergedModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MergedModel\MergedModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MergedModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="MergedModel\MergedModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MergedModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="CurrentModel\CurrentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CurrentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CurrentModel\CurrentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CurrentModel.edmx</DependentUpon>
+      <LastGenOutput>CurrentModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CurrentModel\CurrentModel.edmx.diagram">
+      <DependentUpon>CurrentModel.edmx</DependentUpon>
+    </None>
+    <None Include="CurrentModel\CurrentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CurrentModel.edmx</DependentUpon>
+      <LastGenOutput>CurrentModel.cs</LastGenOutput>
+    </None>
+    <None Include="MergedModel\MergedModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MergedModel.Context.cs</LastGenOutput>
+      <DependentUpon>MergedModel.edmx</DependentUpon>
+    </None>
+    <None Include="MergedModel\MergedModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MergedModel.cs</LastGenOutput>
+      <DependentUpon>MergedModel.edmx</DependentUpon>
+    </None>
+    <None Include="MergedModel\MergedModeledmx.diagram">
+      <DependentUpon>MergedModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Templates\PrizConverterTemplate.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignData Include="SampleData\PrizConverterSampleData.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
